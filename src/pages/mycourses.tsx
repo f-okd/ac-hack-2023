@@ -1,4 +1,5 @@
 import ModuleCard from "@/components/modulecards";
+import Link from "next/link";
 
 export default function Home() {
 
@@ -6,10 +7,10 @@ export default function Home() {
     <main className="container">
       <div className="flex w-full flex-col">
         <div className="card flex grid h-40 items-center rounded-box bg-base-300">
-          <p className="ml-40 text-left">My Learning</p>
+          <p className="ml-40 text-2xl text-left">My Learning</p>
         </div>
       </div>
-      <div role="tablist" className="tabs tabs-bordered ml-40 mr-40">
+      <div role="tablist" className="tabs tabs-bordered ml-40 mr-40 pt-4">
         <input
           type="radio"
           name="my_tabs_1"
@@ -19,8 +20,16 @@ export default function Home() {
           defaultChecked={true}
         />
         <div role="tabpanel" className="tab-content">
-          <ModuleCard title="title" author="author" />
-          <ModuleCard title="title" author="author" />
+          <div className="grid grid-cols-4">
+            <ModuleCard title="title" author="author" />
+            <ModuleCard title="title" author="author" />
+            <ModuleCard title="title" author="author" />
+            <ModuleCard title="title" author="author" />
+            <ModuleCard title="title" author="author" />
+            <ModuleCard title="title" author="author" />
+            <ModuleCard title="title" author="author" />
+            <ModuleCard title="title" author="author" />
+          </div>
         </div>
 
         <input
