@@ -8,7 +8,11 @@
 		"vscode": {
 			"extensions": [
 				"esbenp.prettier-vscode"
-			]
+			],
+			"settings": {
+				"json.format.enable": true,
+				"editor.formatOnSave": true
+			}
 		}
 	}
 

@@ -1,0 +1,66 @@
+{
+    "users": [
+      {
+        "id": "user1",
+        "username": "johndoe",
+        "email": "johndoe@example.com",
+        "password": "password123",
+        "courses": []
+      },
+      {
+        "id": "user2",
+        "username": "janedoe",
+        "email": "janedoe@example.com",
+        "password": "password456",
+        "courses": []
+      }
+    ],
+    "courses": [
+      {
+        "courseId": 1,
+        "title": "Introduction to Python",
+        "thumbnail": "https://example.com/image.png",
+        "creator": "user1",
+        "tags": ["programming", "python"],
+        "videos": [],
+        "rating": 4.5,
+        "comments": []
+      },
+      {
+        "courseId": 2,
+        "title": "Data Structures and Algorithms",
+        "thumbnail": "https://example.com/image2.png",
+        "creator": "user1",
+        "tags": ["programming", "algorithms"],
+        "videos": [],
+        "rating": 4.8,
+        "comments": []
+      }
+    ],
+    "videos": [
+      {
+        "videoID": 1,
+        "videoUrl": "https://example.com/video1.mp4"
+      },
+      {
+        "videoID": 2,
+        "videoUrl": "https://example.com/video2.mp4"
+      },
+      {
+        "videoID": 3,
+        "videoUrl": "https://example.com/video3.mp4"
+      },
+      {
+        "videoID": 4,
+        "videoUrl": "https://example.com/video4.mp4"
+      }
+    ],
+    "comments": [
+      {
+        "user": "user2",
+        "courseID": 1,
+        "videoID": 1,
+        "comment": "Great video! I learned a lot."
+      }
+    ]
+  }
