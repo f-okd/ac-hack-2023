@@ -10,7 +10,7 @@ interface CourseNavbarProps {
 
 export default function CourseNavbar({ activeTab, setActiveTab }: CourseNavbarProps) {
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100" style={{ marginLeft: 'auto', marginRight: 0 }}>
             <a className={`btn btn-ghost text-xl ${activeTab === 'overview' ? 'active' : ''}`} 
                onClick={() => setActiveTab('overview')}>
                 Overview
