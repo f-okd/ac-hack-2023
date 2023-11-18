@@ -1,18 +1,27 @@
 import type { AppProps } from "next/app";
 import { Inter } from "next/font/google";
 
+import type { AppPage } from "@/types";
 import { Layout } from "@/components/layout";
 
 import "@/styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function App({ Component, pageProps }: AppProps) {
+interface MyAppProps extends AppProps {
+  Component: AppProps["Component"] & AppPage;
+}
+
+export default function App({ Component, pageProps }: MyAppProps) {
   return (
     <div className={inter.className}>
-      <Layout>
+      {Component.noLayout ? (
         <Component {...pageProps} />
-      </Layout>
+      ) : (
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      )}
     </div>
   );
 }
