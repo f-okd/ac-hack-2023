@@ -49,10 +49,15 @@ export default function Home() {
           type="radio"
           name="my_tabs_1"
           role="tab"
-          className="tab"
+          className="tab text-base"
           aria-label="Completed"
         />
-        <div role="tabpanel" className="tab-content"></div>
+        <div role="tabpanel" className="tab-content">
+          <div className="grid grid-cols-4">
+            <ModuleCard title="completed" author="author" rating={5} completed={true}/>
+            {/*TODO: get list of modules and display*/}
+          </div>
+        </div>
       </div>
     </main>
   );
