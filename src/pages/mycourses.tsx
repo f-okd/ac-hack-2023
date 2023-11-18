@@ -44,6 +44,15 @@ export default function Home() {
             {/*TODO: get list of modules and display*/}
           </div>
         </div>
+
+        <input
+          type="radio"
+          name="my_tabs_1"
+          role="tab"
+          className="tab"
+          aria-label="Completed"
+        />
+        <div role="tabpanel" className="tab-content"></div>
       </div>
     </main>
   );
