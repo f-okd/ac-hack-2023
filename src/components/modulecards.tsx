@@ -30,7 +30,7 @@ export default function ModuleCard({ title, author }: Props) {
               type="radio"
               title="s"
               className="mask mask-star-2 bg-orange-400"
-              checked
+              defaultChecked={true}
             />
             <input
               type="radio"
