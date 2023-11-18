@@ -1,12 +1,13 @@
 import {useEffect, useState} from "react"
+import CommentItem from "./CommentItem";
 
-interface comment {
+export interface CommentType {
     id: number;
     userID: string;
     courseID: string; 
     message: string;
 }
-const  commentsTestData:comment[] = [
+const allComments: CommentType[] = [
   {
     id: 1,
     userID: "user1",
@@ -69,7 +70,10 @@ const  commentsTestData:comment[] = [
   },
 ];
 
-const Comments = () => {
+// MOVE STATE UP TO COURSE + PASS IN COURSE ID AS PROPS
+const commentsTestData = allComments.filter((data) => data.courseID==="course5")
+
+const CommentList = () => {
     const [comments, setComments] = useState(commentsTestData)
     const [searchValue, setSearchValue] = useState("")
     const resultsEmpty = comments.length === 0
@@ -84,7 +88,7 @@ const Comments = () => {
     }
     const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
       setSearchValue(e.currentTarget.value);
-      if(searchValue.length >3) {
+      if(searchValue.length > 3) {
         filterComments()
       } else {
         resetComments()
@@ -92,17 +96,22 @@ const Comments = () => {
     };
 
   return (
-    <>
-    <input type="text" placeholder="Search all course questions" onChange={(e) => handleInputChange(e)} value={searchValue}></input>
+    <div className="w-full">
+      <input
+        className="w-full rounded-lg border border-gray-300 p-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+        type="text"
+        placeholder="Search all course questions"
+        onChange={(e) => handleInputChange(e)}
+        value={searchValue}
+      ></input>
       <div>
-        {comments.map(
-            (comment, i) => (<p key={i}>{comment.message}</p>)
-        )}
+        {comments.map((comment, i) => (
+          <CommentItem key={i} comment={comment} />
+        ))}
         {resultsEmpty && <p>No Comments matching that term</p>}
+      </div>
     </div>
-      
-    </>
   );
 }
 
-export default Comments
+export default CommentList

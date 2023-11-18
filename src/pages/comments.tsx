@@ -1,11 +1,11 @@
-import Comments from '@/components/Comments'
+import CommentList from '@/components/CommentList'
+import Comments from '@/components/CommentList'
 import React from 'react'
 
 const CommentsPage = () => {
   return (
     <>
-        <Comments/>
-        heyy
+        <CommentList/>
     </>
   )
 }
