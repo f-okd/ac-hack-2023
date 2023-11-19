@@ -12,7 +12,7 @@ export default function CoursePage() {
     return (
         <div className=''>
             <CourseDrawer />
-            <VideoPlayer src="https://www.youtube.com/watch?v=eIrMbAQSU34&t=7662s" />
+            <VideoPlayer src="https://www.youtube.com/watch?v=gQojMIhELvM&list=PLoYCgNOIyGAB_8_iq1cL8MVeun7cB6eNc" />
             <CourseNavbar activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
     );
