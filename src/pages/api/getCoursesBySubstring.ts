@@ -1,10 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import {  User, Database } from "../../types/model_interfaces";
+import {  Course, Database } from "../../types/model_interfaces";
 import { promises } from 'fs';
 
 type Data = {
-  user?: User,
+  courses?: Course[],
   message?: string,
 }
 
@@ -14,13 +14,16 @@ export default async function handler(
 ) {
   const file = await promises.readFile(process.cwd() + "/public/database.json", "utf8");
   const db: Database = JSON.parse(file);
-  const { email, password } = JSON.parse(req.body);
-  const user = db.users.find(
-      user => user.email == email && user.password == password);
+  const { query } = JSON.parse(req.body);
+  const courses = db.courses.filter(course => course.title.toLowerCase().includes(query));
+  console.log(req.body);
+  console.log(courses);
+  console.log(db.courses);
 
-  if (!user) {
-    res.status(200).json({ message: "no such user." });
+  if (!courses) {
+    res.status(200).json({ message: "no matching courses." });
   } else {
-    res.status(200).json({ user })
+    res.status(200).json({ courses });
   }
 }
+6

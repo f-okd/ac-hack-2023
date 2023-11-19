@@ -2,10 +2,11 @@ import Link from "next/link";
 
 import { Brand } from "./brand";
 import { Drawer } from "./drawer";
+import SearchBar from "./SearchBar";
 
 export function NavBar() {
   return (
-    <header className="navbar items-stretch">
+    <header className="container navbar items-stretch">
       <div className="navbar-start">
         <Drawer />
       </div>
@@ -17,9 +18,12 @@ export function NavBar() {
         >
           <Brand />
         </Link>
+        <SearchBar />
       </div>
 
-      <div className="navbar-end">TODO: profile?</div>
+      <div className="navbar-end">
+        <Link href={"/mycourses"}>My Learning</Link>
+      </div>
     </header>
   );
 }
