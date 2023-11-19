@@ -34,7 +34,7 @@ const allComments: CommentType[] = [
   },
   {
     id: 5,
-    userID: "user1",
+    userID: "Reuben",
     courseID: "course5",
     message: "I am glad I took this course.",
   },
@@ -64,7 +64,7 @@ const allComments: CommentType[] = [
   },
   {
     id: 10,
-    userID: "user2",
+    userID: "Alex",
     courseID: "course5",
     message: "I learned a lot from this course.",
   },

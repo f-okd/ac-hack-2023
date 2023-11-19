@@ -2,11 +2,11 @@ import { CommentType } from "./CommentList";
 
 const CommentItem = ({ comment }: { comment: CommentType }) => {
   return (
-    <div className="mb-4 rounded-lg bg-white p-4 shadow-lg">
-      <div className="text-lg font-semibold text-gray-800">
+    <div className="chat-bubble mt-4 w-full ">
+      <div className="chat-footer opacity-50 font-semibold text-white">
         {comment.userID}
       </div>
-      <p className="mt-2 text-gray-600">{comment.message}</p>
+      <p className="mt-2 text-white-600">{comment.message}</p>
     </div>
   );
 };

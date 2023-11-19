@@ -93,7 +93,7 @@ export function CourseDrawer() {
     };
 
     return (
-        <div className="drawer">
+        <div className="drawer ">
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
                 {/* Page content here */}
@@ -101,7 +101,7 @@ export function CourseDrawer() {
             </div> 
             <div className="drawer-side">
                 <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content mt-16">
                     {/* Sidebar content with collapsible sections */}
                     {sections.map(section => (
                         <li key={section.id}>

@@ -10,7 +10,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
     const videoId = src.split('v=')[1].split('&')[0];
 
     return (
-        <div className="flex justify-center items-center h-screen">
+        <div className="flex justify-center items-center pb-6">
             <iframe
                 width="560" 
                 height="300" 
