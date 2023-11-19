@@ -22,7 +22,9 @@ export function NavBar() {
       </div>
 
       <div className="navbar-end">
-        <Link href={"/mycourses"}>My Learning</Link>
+        <Link href="/mycourses" className="font-semibold">
+          My Learning
+        </Link>
       </div>
     </header>
   );

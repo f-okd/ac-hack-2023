@@ -4,6 +4,7 @@ import { FaDiscord, FaGithub, FaGoogle, FaFacebook } from "react-icons/fa";
 
 import type { AppPage } from "@/types";
 import { Brand } from "@/components/layout/brand";
+import { useRouter } from "next/router";
 
 interface Provider {
   name: string;
@@ -30,18 +31,21 @@ const providers: Record<string, Provider> = {
 };
 
 const SignInPage: AppPage = () => {
+  const router = useRouter();
+
+  const signIn = () => {
+    router.push("/home");
+  };
+
   return (
     <>
       <Head>
         <title>Sign in to EduPont</title>
       </Head>
       <main className="flex h-[100dvh] flex-col items-center justify-center gap-y-8">
-        <Link
-          href="/"
-          className="btn btn-ghost text-3xl normal-case md:btn-lg md:-mt-10 md:!text-4xl"
-        >
+        <div className="btn btn-ghost text-3xl normal-case md:btn-lg md:-mt-10 md:!text-4xl">
           <Brand />
-        </Link>
+        </div>
 
         <section className="flex w-full flex-col items-center gap-3 border-y-2 border-primary py-8 dark:bg-base-200 sm:mx-auto sm:max-w-md sm:rounded-box sm:border-2 sm:border-x-2 sm:px-8">
           <h1 className="text-sm">Sign in with</h1>
@@ -51,8 +55,7 @@ const SignInPage: AppPage = () => {
                 <button
                   key={id}
                   type="button"
-                  // TODO: implement sign in - use next-auth ????
-                  // onClick={}
+                  onClick={signIn}
                   // gradient effect: https://youtube.com/shorts/qzZ0iQKoUQ0
                   className="btn btn-outline relative text-base normal-case before:absolute before:-inset-[1px] before:bg-gradient-to-br before:from-primary/40 before:via-transparent before:to-primary/40 before:opacity-0 before:[border-radius:inherit] hover:before:opacity-100 dark:hover:bg-white/5 dark:hover:text-base-content"
                 >
