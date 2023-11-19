@@ -43,10 +43,9 @@ export function Drawer() {
         type="button"
         onClick={openModal}
         className="navbar-icon-btn btn btn-ghost text-lg"
+        aria-label="Navigation menu"
       >
-        <span>
-          <HiOutlineMenuAlt1 />
-        </span>
+        <HiOutlineMenuAlt1 />
       </button>
 
       <Transition show={isOpen} as={Fragment}>
