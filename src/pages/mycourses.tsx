@@ -1,7 +1,13 @@
 import ModuleCard from "@/components/modulecards";
 import Link from "next/link";
+import { Course } from "@/types/model_interfaces";
 
-export default function Home() {
+interface Props {
+  courses: any;
+}
+
+function Home({courses}: Props) {
+  console.log(courses)
 
   return (
     <main className="container">
@@ -15,19 +21,15 @@ export default function Home() {
           type="radio"
           name="my_tabs_1"
           role="tab"
-          className="tab text-base"
+          className="tab text-base w-max"
           aria-label="My Courses"
           defaultChecked={true}
         />
         <div role="tabpanel" className="tab-content">
           <div className="grid grid-cols-4">
-            <ModuleCard title="title" author="author" rating={5} completed={false}/>
-            <ModuleCard title="title" author="author" rating={2} completed={false}/>
-            <ModuleCard title="title" author="author" rating={3} completed={false}/>
-            <ModuleCard title="title" author="author" rating={4} completed={false}/>
-            <ModuleCard title="title" author="author" rating={4} completed={false}/>
-            <ModuleCard title="title" author="author" rating={2} completed={false}/>
-            {/*TODO: get list of modules and display*/}
+            {courses.map((course: Course) => (
+              <ModuleCard key={course.id} id={course.id} title={course.title} author={course.creator} thumbnail={course.thumbnail} rating={course.rating} completed={false}/>
+            ))}
           </div>
         </div>
 
@@ -40,11 +42,27 @@ export default function Home() {
         />
         <div role="tabpanel" className="tab-content">
           <div className="grid grid-cols-4">
-            <ModuleCard title="completed" author="author" rating={5} completed={true}/>
-            {/*TODO: get list of modules and display*/}
+            {/*<ModuleCard title="completed" author="author" rating={5} completed={true}/>
+            TODO: get list of modules and display*/}
           </div>
         </div>
       </div>
     </main>
   );
 }
+
+export async function getStaticProps() {
+
+  const res = await fetch("http://localhost:3000/database.json");
+  const data = await res.json();
+
+  const courses = data.courses;
+
+  return {
+    props: {
+      courses,
+    },
+  };
+}
+
+export default Home;

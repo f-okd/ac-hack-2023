@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { useState } from "react";
 interface Props {
+  id: number;
   title: string;
   author: string;
+  thumbnail: string;
   rating: number;
   completed?: boolean;
 }
 
 export default function ModuleCard({
+  id,
   title,
   author,
+  thumbnail,
   rating,
   completed,
 }: Props) {
@@ -17,12 +21,13 @@ export default function ModuleCard({
 
   return (
     <main className="container p-3">
-      <div className="card bg-base-100 shadow-2xl">
+      <div className="card bg-base-100 shadow-2xl h-64">
+      <figure><img src={thumbnail} alt="1" /></figure>
         <div className="card-body">
           <Link href="">
             <p className="card-title text-base">{title}</p>
           </Link>
-          <p className="text-sm">{author}</p>
+          <p className="text-sm">Created by {author}</p>
         </div>
 
         <div className="card-actions">
