@@ -12,7 +12,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>,
 ) {
-  if (req.method == "GET") {
     const file = await promises.readFile(process.cwd() + "/public/database.json", "utf8");
     const db: Database = JSON.parse(file);
     const { id } = JSON.parse(req.body);
@@ -23,5 +22,4 @@ export default async function handler(
     } else {
       res.status(200).json({ video })
     }
-  }
 }

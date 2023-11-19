@@ -12,16 +12,14 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>,
 ) {
-  if (req.method == "GET") {
-    const file = await promises.readFile(process.cwd() + "/public/database.json", "utf8");
-    const db: Database = JSON.parse(file);
-    const { id } = JSON.parse(req.body);
-    const course = db.courses.find(course => course.id == id);
+  const file = await promises.readFile(process.cwd() + "/public/database.json", "utf8");
+  const db: Database = JSON.parse(file);
+  const { id } = JSON.parse(req.body);
+  const course = db.courses.find(course => course.id == id);
 
-    if (!course) {
-      res.status(200).json({ message: "no such comment." });
-    } else {
-      res.status(200).json({ course })
-    }
+  if (!course) {
+    res.status(200).json({ message: "no such comment." });
+  } else {
+    res.status(200).json({ course })
   }
 }
