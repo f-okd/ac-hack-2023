@@ -23,24 +23,10 @@ export default function Home() {
           <div className="grid grid-cols-4">
             <ModuleCard title="title" author="author" rating={5} completed={false}/>
             <ModuleCard title="title" author="author" rating={2} completed={false}/>
+            <ModuleCard title="title" author="author" rating={3} completed={false}/>
+            <ModuleCard title="title" author="author" rating={4} completed={false}/>
+            <ModuleCard title="title" author="author" rating={4} completed={false}/>
             <ModuleCard title="title" author="author" rating={2} completed={false}/>
-            <ModuleCard title="title" author="author" rating={2} completed={false}/>
-            <ModuleCard title="title" author="author" rating={2} completed={false}/>
-            <ModuleCard title="title" author="author" rating={2} completed={false}/>
-            {/*TODO: get list of modules and display*/}
-          </div>
-        </div>
-
-        <input
-          type="radio"
-          name="my_tabs_1"
-          role="tab"
-          className="tab text-base"
-          aria-label="Completed"
-        />
-        <div role="tabpanel" className="tab-content">
-          <div className="grid grid-cols-4">
-            <ModuleCard title="completed" author="author" rating={5} completed={true}/>
             {/*TODO: get list of modules and display*/}
           </div>
         </div>
