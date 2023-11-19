@@ -13,11 +13,7 @@ export default function ModuleCard({
   rating,
   completed,
 }: Props) {
-  const [selectedStars, setSelectedStars] = useState(rating);
-
-  const handleRating = (starIndex: number) => {
-    setSelectedStars(starIndex);
-  };
+  const progressValue = completed ? 100 : 50;
 
   return (
     <main className="container p-3">
@@ -30,25 +26,12 @@ export default function ModuleCard({
         </div>
 
         <div className="card-actions">
-          {completed ? (
-            <p className="ml-4">100%</p>
-          ) : (
-            <p className="ml-4">In Progress</p>
-          )}
-
-          {completed ? (
-            <progress
-              className="progress progress-primary ml-4 w-11/12"
-              value={100}
-              max="100"
-            ></progress>
-          ) : (
-            <progress
-              className="progress progress-primary ml-4 w-11/12"
-              value={50}
-              max="100"
-            ></progress>
-          )}
+          <p className="ml-4">{progressValue + "%"}</p>
+          <progress
+            className="progress progress-primary ml-4 w-11/12"
+            value={progressValue}
+            max="100"
+          ></progress>
 
           <div className="rating ml-4 w-1/4">
             {Array.from({ length: 5 }).map((_, index) => (
@@ -57,39 +40,10 @@ export default function ModuleCard({
                 type="radio"
                 title={rating.toString()}
                 className="mask mask-star-2 bg-orange-400"
-                defaultChecked={index+1 === rating}
+                defaultChecked={index + 1 === rating}
               />
             ))}
           </div>
-
-          {/*<div className="rating w-1/4 ml-4">
-            <input
-              type="radio"
-              title={rating.toString()}
-              className="mask mask-star-2 bg-orange-400"
-            />
-            <input
-              type="radio"
-              title={rating.toString()}
-              className="mask mask-star-2 bg-orange-400"
-              defaultChecked={true}
-            />
-            <input
-              type="radio"
-              title={rating.toString()}
-              className="mask mask-star-2 bg-orange-400"
-            />
-            <input
-              type="radio"
-              title={rating.toString()}
-              className="mask mask-star-2 bg-orange-400"
-            />
-            <input
-              type="radio"
-              title={rating.toString()}
-              className="mask mask-star-2 bg-orange-400"
-            />
-          </div>*/}
         </div>
       </div>
     </main>
