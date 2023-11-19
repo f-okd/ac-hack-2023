@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Brand } from "./brand";
 import { Drawer } from "./drawer";
+import SearchBar from "./SearchBar";
 
 export function NavBar() {
   return (
@@ -17,6 +18,7 @@ export function NavBar() {
         >
           <Brand />
         </Link>
+        <SearchBar/>
       </div>
 
       <div className="navbar-end">TODO: profile?</div>
