@@ -2,6 +2,8 @@ import { NavBar } from "./navbar";
 
 export type LayoutProps = React.PropsWithChildren;
 
+// TODO: chat bot button
+
 export function Layout({ children }: LayoutProps) {
   return (
     <div className="flex min-h-[100dvh] flex-col">

@@ -5,12 +5,12 @@ export interface Comment {
     message: string,
 }
 
-interface Video {
+export interface Video {
     id: number,
     url: string,
 }
 
-interface Course {
+export interface Course {
     id: number,
     title: string,
     thumbnail: string,
@@ -21,7 +21,7 @@ interface Course {
     comments: Comment[],
 }
 
-interface User {
+export interface User {
     id: string,
     username: string,
     email: string,
@@ -29,7 +29,7 @@ interface User {
     courses: Course[],
 }
 
-interface Database {
+export interface Database {
     users: User[],
     videos: Video[],
     comments: Comment[],
