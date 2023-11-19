@@ -18,9 +18,15 @@ export function CourseCarousel({ courses }: CourseCarouselProps) {
 
   return (
     <div className="relative flex w-full items-center gap-x-2">
-      <ul className="item flex w-full gap-x-16">
+      <ul
+        className="item grid w-full grid-cols-2 grid-rows-1 gap-x-4 overflow-hidden md:gap-x-16 lg:grid-cols-3"
+        style={{
+          // Limit to only 1 visible row https://stackoverflow.com/a/63607607
+          gridAutoRows: "0px",
+        }}
+      >
         {courses.slice(start, start + 3).map((course) => (
-          <li key={course.id} className="w-1/3">
+          <li key={course.id} className="m-0.5">
             <RecommendedCourse {...course} />
           </li>
         ))}

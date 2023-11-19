@@ -13,7 +13,7 @@ export function NavBar() {
 
       <div className="navbar-center">
         <Link
-          href="/"
+          href="/home"
           className="btn btn-ghost btn-sm !text-lg normal-case md:btn-md md:!text-xl"
         >
           <Brand />

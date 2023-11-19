@@ -48,7 +48,7 @@ export function RecommendedCourse({
   rating,
 }: RecommendedCourseProps) {
   return (
-    <div className="flex h-40 w-full flex-row outline outline-1">
+    <div className="flex h-60 md:h-40 w-full flex-row outline outline-1">
       <CourseThumbnail thumbnail={thumbnail} title={title} />
 
       <div className="flex flex-grow flex-col justify-between">
@@ -56,7 +56,7 @@ export function RecommendedCourse({
           <h3 className="font-bold">
             {id}. {title}
           </h3>
-          <h4 className="text-base-content/85 text-sm">{creator}</h4>
+          <p className="text-sm opacity-75">By {creator}</p>
 
           <Rating id={String(id)} rating={rating} className="mt-auto" />
         </div>

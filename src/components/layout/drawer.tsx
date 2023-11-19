@@ -80,7 +80,7 @@ export function Drawer() {
 
                   <header className="navbar gap-1 border-b border-base-300 px-4 dark:border-white/10">
                     <Link
-                      href="/"
+                      href="/home"
                       className="btn btn-ghost btn-sm text-xl normal-case"
                     >
                       <Brand />
