@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { Dialog, Transition } from "@headlessui/react";
 import clsx from "clsx";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
-import { HiXMark } from "react-icons/hi2";
+import { HiXMark, HiBookOpen } from "react-icons/hi2";
 
 import { Brand } from "./brand";
 
@@ -80,7 +80,7 @@ export function Drawer() {
 
                   <header className="navbar gap-1 border-b border-base-300 px-4 dark:border-white/10">
                     <Link
-                      href="/"
+                      href="/home"
                       className="btn btn-ghost btn-sm text-xl normal-case"
                     >
                       <Brand />
@@ -101,8 +101,8 @@ export function Drawer() {
                     <nav>
                       <ul className="menu my-4 px-4">
                         <NavItem href="/test">
-                          <span>icon here</span>
-                          test
+                          <HiBookOpen />
+                          My Learning
                         </NavItem>
                       </ul>
                     </nav>

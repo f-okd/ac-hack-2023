@@ -13,7 +13,7 @@ export function NavBar() {
 
       <div className="navbar-center">
         <Link
-          href="/"
+          href="/home"
           className="btn btn-ghost btn-sm !text-lg normal-case md:btn-md md:!text-xl"
         >
           <Brand />
@@ -22,7 +22,9 @@ export function NavBar() {
       </div>
 
       <div className="navbar-end">
-        <Link href={"/mycourses"}>My Learning</Link>
+        <Link href="/mycourses" className="font-semibold">
+          My Learning
+        </Link>
       </div>
     </header>
   );

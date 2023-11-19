@@ -2,12 +2,11 @@ import Head from "next/head";
 
 import type { Course } from "@/types/model_interfaces";
 import { CourseCarousel } from "@/components/home/recommended-carousel";
+import { ContinueCourse } from "@/components/home/continue-course";
 
 import faye from "./faye.jpg";
 
-// TODO: display current course
-// TODO: handle when they havent started a course (just dont show)
-const currentCourse: Course | undefined = undefined;
+const currentCourse = true;
 
 const recommendedCourses: Course[] = [
   {
@@ -26,7 +25,7 @@ const recommendedCourses: Course[] = [
     creator: "Jeffrey Way",
     tags: ["tag1", "tag2", "tag3"],
     videos: [],
-    rating: 5,
+    rating: 4.8,
     comments: [],
     id: 2,
     title: "Accessibility in E-Learning: A Practical Approach",
@@ -36,7 +35,7 @@ const recommendedCourses: Course[] = [
     creator: "Jeffrey Way",
     tags: ["tag1", "tag2", "tag3"],
     videos: [],
-    rating: 4,
+    rating: 3.9,
     comments: [],
     id: 455,
     title: "Learn React",
@@ -50,25 +49,28 @@ const recommendedCourses: Course[] = [
     rating: 1,
     comments: [],
     id: 103,
-    title: "Modern Civilization History",
+    title: "Modern Civilization & History",
   },
   // TODO: 2 or 3 more
 ];
 
 export default function Home() {
   return (
-    <main className="container flex flex-grow flex-col gap-y-4">
+    <main className="container flex flex-grow flex-col items-center gap-y-4 mt-2">
       <Head>
         <title>Home | EduPont</title>
       </Head>
 
-      <div>CURRENT GOES HERE (TODO)</div>
+      {currentCourse && (
+        <ContinueCourse />
+      )}
 
       <section className="mx-4 space-y-2">
         <h2 className="font-serif text-3xl">
           Let{"'"}s start learning,{" "}
           <span className="text-primary">Babatunde</span>
         </h2>
+        <h3 className="font-semibold">Our top picks for you</h3>
 
         <CourseCarousel courses={recommendedCourses} />
       </section>
