@@ -9,7 +9,7 @@ const SearchResultsList = ({ courses }: { courses: Course[] }) => {
           <div className="flex items-center border-b border-gray-200 hover:bg-gray-100">
             <img
               alt={`image of course ${course.title}`}
-              src={course.thumbnail}
+              src={course.thumbnail as string}
               className="block h-20 w-20 object-cover"
             />
             <p className="flex-grow px-4 py-2 text-sm text-gray-700">

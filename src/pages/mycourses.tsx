@@ -26,7 +26,7 @@ function Home({courses}: Props) {
         <div role="tabpanel" className="tab-content">
           <div className="grid grid-cols-4">
             {courses.map((course: Course) => (
-              <ModuleCard key={course.id} id={course.id} title={course.title} author={course.creator} thumbnail={course.thumbnail} rating={Math.floor(course.rating)} completed={false}/>
+              <ModuleCard key={course.id} id={course.id} title={course.title} author={course.creator} thumbnail={course.thumbnail as string} rating={Math.floor(course.rating)} completed={false}/>
             ))}
           </div>
         </div>
@@ -48,7 +48,7 @@ function Home({courses}: Props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
   const res = await fetch("http://localhost:3000/database.json");
   const data = await res.json();
