@@ -19,17 +19,17 @@
       {
         "courseId": 1,
         "title": "Introduction to Python",
-        "thumbnail": "https://example.com/image.png",
+        "thumbnail": "https://via.placeholder.com/150/92c952",
         "creator": "user1",
         "tags": ["programming", "python"],
         "videos": [],
-        "rating": 4.5,
+        "rating": 3,
         "comments": []
       },
       {
         "courseId": 2,
         "title": "Data Structures and Algorithms",
-        "thumbnail": "https://example.com/image2.png",
+        "thumbnail": "https://via.placeholder.com/150/771796",
         "creator": "user1",
         "tags": ["programming", "algorithms"],
         "videos": [],
