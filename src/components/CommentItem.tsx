@@ -1,6 +1,6 @@
-import { CommentType } from "./CommentList";
+import { Comment } from "@/types/model_interfaces";
 
-const CommentItem = ({ comment }: { comment: CommentType }) => {
+const CommentItem = ({ comment }: { comment: Comment }) => {
   return (
     <div className="mb-4 rounded-lg bg-white p-4 shadow-lg">
       <div className="text-lg font-semibold text-gray-800">
