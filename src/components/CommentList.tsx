@@ -93,7 +93,7 @@ const CommentList = () => {
   return (
     <div className="w-full">
       <input
-        className="w-full rounded-lg border border-gray-300 p-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className=" rounded-lg border border-gray-300 p-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
         type="text"
         placeholder="Search all course questions"
         onChange={(e) => handleInputChange(e)}
