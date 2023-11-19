@@ -6,3 +6,8 @@ export type AppPage<P = {}, IP = P> = NextPage<P, IP> & {
    */
   noLayout?: boolean;
 };
+
+export type Message = {
+  role: "assistant" | "user";
+  content: string;
+};
