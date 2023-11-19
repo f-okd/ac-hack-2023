@@ -1,10 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import {  Video, Database } from "../../types/model_interfaces";
+import {  Course, Database } from "../../types/model_interfaces";
 import { promises } from 'fs';
 
 type Data = {
-  video?: Video,
+  course?: Course,
   message?: string,
 }
 
@@ -16,12 +16,12 @@ export default async function handler(
     const file = await promises.readFile(process.cwd() + "/public/database.json", "utf8");
     const db: Database = JSON.parse(file);
     const { id } = req.body;
-    const video = db.videos.find(video => video.id == id);
+    const course = db.courses.find(course => course.id == id);
 
-    if (!video) {
-      res.status(200).json({ message: "no such video." });
+    if (!course) {
+      res.status(200).json({ message: "no such comment." });
     } else {
-      res.status(200).json({ video })
+      res.status(200).json({ course })
     }
   }
 }
