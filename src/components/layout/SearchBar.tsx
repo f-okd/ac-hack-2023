@@ -42,15 +42,17 @@ const SearchBar = () => {
   };
 
   return (
-    <>
+    <div className="relative">
       <input
         className="rounded-lg border border-gray-300 p-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
         placeholder="Search for courses"
         value={searchValue}
         onChange={handleSearchChange}
       />
-      {searchResults.length > 0 && searchValue && <SearchResultsList courses={searchResults} />}
-    </>
+      {searchResults.length > 0 && searchValue && (
+        <SearchResultsList courses={searchResults} />
+      )}
+    </div>
   );
 };
 
