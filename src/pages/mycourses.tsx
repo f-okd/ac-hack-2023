@@ -7,8 +7,6 @@ interface Props {
 }
 
 function Home({courses}: Props) {
-  console.log(courses)
-
   return (
     <main className="container">
       <div className="flex w-full flex-col">
@@ -28,7 +26,7 @@ function Home({courses}: Props) {
         <div role="tabpanel" className="tab-content">
           <div className="grid grid-cols-4">
             {courses.map((course: Course) => (
-              <ModuleCard key={course.id} id={course.id} title={course.title} author={course.creator} thumbnail={course.thumbnail} rating={course.rating} completed={false}/>
+              <ModuleCard key={course.id} id={course.id} title={course.title} author={course.creator} thumbnail={course.thumbnail} rating={Math.floor(course.rating)} completed={false}/>
             ))}
           </div>
         </div>
@@ -42,8 +40,7 @@ function Home({courses}: Props) {
         />
         <div role="tabpanel" className="tab-content">
           <div className="grid grid-cols-4">
-            {/*<ModuleCard title="completed" author="author" rating={5} completed={true}/>
-            TODO: get list of modules and display*/}
+            <ModuleCard id={3} title="Artifical Intelligence" author="user2" thumbnail={"https://via.placeholder.com/150/24f355"} rating={5} completed={true}/>
           </div>
         </div>
       </div>
