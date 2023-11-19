@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import {CourseDrawer} from '../components/courseDrawer';
 import CourseNavbar from '../components/courseNavbar';
 import VideoPlayer from '../components/videoPlayer';
-import CommentList from '@/components/CommentList';
-import CommentsPage from './comments';
 
 type TabName = 'overview' | 'QA';
 

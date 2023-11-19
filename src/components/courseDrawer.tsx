@@ -20,20 +20,20 @@ export function CourseDrawer() {
     const [sections, setSections] = useState<Section[]>([
         {
             id: 1,
-            title: 'Section 1: Introduction',
+            title: 'Section 1: Introduction to CSS',
             subsections: [
-                { id: 1, title: 'Lecture 1.1', completed: false },
-                { id: 2, title: 'Lecture 1.2', completed: false },
+                { id: 1, title: 'Lecture 1.1 Course Roadmap', completed: false },
+                { id: 2, title: 'Lecture 1.2 CSS format', completed: false },
                 // More lectures...
             ],
         },
         // More sections...
         {
             id: 2,
-            title: 'Section 2: Introduction',
+            title: 'Section 2: Introduction to HTML',
             subsections: [
-                { id: 1, title: 'Lecture 1.1', completed: false },
-                { id: 2, title: 'Lecture 1.2', completed: false },
+                { id: 1, title: 'Lecture 1.1 Course Roadmap', completed: false },
+                { id: 2, title: 'Lecture 1.2 HTML Format', completed: false },
                 // More lectures...
             ],
         },
@@ -41,8 +41,8 @@ export function CourseDrawer() {
             id: 3,
             title: 'Section 3: Introduction to Javascript',
             subsections: [
-                { id: 1, title: 'Lecture 1.1', completed: false },
-                { id: 2, title: 'Lecture 1.2', completed: false },
+                { id: 1, title: 'Lecture 1.1 Course Roadmap', completed: false },
+                { id: 2, title: 'Lecture 1.2 JS Format', completed: false },
                 // More lectures...
             ],
         },
@@ -50,8 +50,8 @@ export function CourseDrawer() {
             id: 4,
             title: 'Section 4: Introduction to React',
             subsections: [
-                { id: 1, title: 'Lecture 1.1', completed: false },
-                { id: 2, title: 'Lecture 1.2', completed: false },
+                { id: 1, title: 'Lecture 1.1 Course Roadmap', completed: false },
+                { id: 2, title: 'Lecture 1.2 React Format', completed: false },
                 // More lectures...
             ],
         },
@@ -59,8 +59,7 @@ export function CourseDrawer() {
             id: 5,
             title: 'Section 5: Test',
             subsections: [
-                { id: 1, title: 'Lecture 1.1', completed: false },
-                { id: 2, title: 'Lecture 1.2', completed: false },
+                { id: 1, title: 'Develop a website', completed: false },
                 // More lectures...
             ],
         },
@@ -93,14 +92,14 @@ export function CourseDrawer() {
     };
 
     return (
-        <div className="drawer ">
-            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+        <div className="drawer drawer-end">
+            <input id="my-drawer" type="checkbox" className="drawer-toggle " />
             <div className="drawer-content">
                 {/* Page content here */}
-                <label htmlFor="my-drawer" className="btn btn-primary drawer-button">Navigate Course</label>
+                <label htmlFor="my-drawer" className="btn btn-primary drawer-button right-0 absolute">Navigate Course</label>
             </div> 
-            <div className="drawer-side">
-                <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+            <div className="drawer-side ">
+                <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay "></label>
                 <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content mt-16">
                     {/* Sidebar content with collapsible sections */}
                     {sections.map(section => (
