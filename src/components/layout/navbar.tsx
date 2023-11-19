@@ -5,7 +5,7 @@ import { Drawer } from "./drawer";
 
 export function NavBar() {
   return (
-    <header className="navbar items-stretch">
+    <header className="container navbar items-stretch">
       <div className="navbar-start">
         <Drawer />
       </div>
