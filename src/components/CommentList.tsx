@@ -74,7 +74,7 @@ const CommentList = () => {
     const resultsEmpty = comments.length === 0
 
     const filterComments = () => {
-        const currentQueryResults = comments.filter((comment) => comment.message.includes(searchValue))
+        const currentQueryResults = comments.filter((comment) => comment.message.toLocaleLowerCase().includes(searchValue.toLowerCase()))
         setComments(currentQueryResults)
     }
 
