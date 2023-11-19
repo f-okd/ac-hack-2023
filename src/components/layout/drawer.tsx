@@ -100,7 +100,7 @@ export function Drawer() {
                   <main>
                     <nav>
                       <ul className="menu my-4 px-4">
-                        <NavItem href="/test">
+                        <NavItem href="/mycourses">
                           <HiBookOpen />
                           My Learning
                         </NavItem>
