@@ -97,9 +97,17 @@ export const ChatBotDialogContent = forwardRef<
       className="flex min-h-[75dvh] w-screen max-w-xl flex-col rounded-2xl bg-base-100 p-6 shadow-lg"
       ref={ref}
     >
-      <Dialog.Title as="h1" className="text-xl font-semibold">
-        ChatBot name here
-        {/* TODO: close button */}
+      <Dialog.Title as="h1" className="text-xl font-semibold flex">
+        Charlie
+
+        <button
+          type="button"
+          className="ml-auto"
+          onClick={closeModal}
+          aria-label="Close modal"
+        >
+          <HiXMark />
+        </button>
       </Dialog.Title>
       {/* <h1 className="mx-auto text-xl font-semibold underline">Charlie</h1> */}
       <div className="relative m-1 flex-grow">
