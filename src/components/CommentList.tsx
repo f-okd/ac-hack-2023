@@ -66,7 +66,8 @@ const allComments: Comment[] = [
 ];
 
 // MOVE STATE UP TO COURSE + PASS IN COURSE ID AS PROPS
-const commentsTestData = allComments.filter((data) => data.courseID===5)
+// const commentsTestData = allComments.filter((data) => data.courseID===5)
+const commentsTestData = allComments
 
 const CommentList = () => {
     const [comments, setComments] = useState(commentsTestData)

@@ -1,6 +1,7 @@
 import { Course } from "@/types/model_interfaces";
 import {useState} from "react"
 import SearchResultsList from "./SearchResultsList";
+import { useRouter } from "next/router";
 
 const courses = [
   {
@@ -162,6 +163,7 @@ const courses = [
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
   const [searchResults, setSearchResults] = useState<Course[]>([]);
+  const router = useRouter()
 
   const handleSearchChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = e?.currentTarget.value;
@@ -173,6 +175,11 @@ const SearchBar = () => {
     setSearchResults(filteredCourses);
   };
 
+  const goToSearchResults = (e: React.FormEvent<HTMLInputElement>) => {
+    const value = e?.currentTarget.value;
+    router.push(`/searchresults/${value}`)
+  };
+
   return (
     <div className="relative">
       <input
@@ -180,6 +187,7 @@ const SearchBar = () => {
         placeholder="Search for courses"
         value={searchValue}
         onChange={handleSearchChange}
+        onSubmit={goToSearchResults}
       />
       {searchResults.length > 0 && searchValue && (
         <SearchResultsList courses={searchResults} />
