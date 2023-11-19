@@ -18,10 +18,12 @@ export function NavBar() {
         >
           <Brand />
         </Link>
-        <SearchBar/>
+        <SearchBar />
       </div>
 
-      <div className="navbar-end">TODO: profile?</div>
+      <div className="navbar-end">
+        <Link href={"/mycourses"}>My Learning</Link>
+      </div>
     </header>
   );
 }
