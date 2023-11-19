@@ -21,7 +21,7 @@ export default function ModuleCard({
 
   return (
     <main className="container p-3">
-      <div className="card bg-base-100 shadow-2xl h-64">
+      <div className="card bg-base-100 shadow-2xl h-64 mt-4">
       <figure><img src={thumbnail} alt="1" /></figure>
         <div className="card-body">
           <Link href="">
