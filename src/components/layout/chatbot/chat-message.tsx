@@ -37,7 +37,7 @@ export function ChatBotMessage({
       {isBot && <BotIcon />}
 
       <div className="chat-header space-x-1">
-        {/* {isBot && <span>Charlie</span>} */}
+        {isBot && <span>Charlie</span>}
 
         {/* <time
           dateTime={new Date(timestamp).toISOString()}

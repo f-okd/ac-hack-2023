@@ -22,7 +22,7 @@ export function ContinueCourse() {
     <section>
       <h2 className="font-serif text-3xl">Pick up where you left off</h2>
 
-      <div className="card card-side -mt-2 w-full max-w-3xl bg-base-100 shadow-xl">
+      <div className="card card-side w-full max-w-3xl bg-base-100 shadow-xl">
         <figure>
           <Image src={currentCourse.thumbnail} alt={currentCourse.title} />
         </figure>
