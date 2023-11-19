@@ -23,7 +23,7 @@ export default function ModuleCard({
       <div className="card bg-base-100 shadow-2xl h-64 mt-4">
       <figure><img src={thumbnail} alt="1" /></figure>
         <div className="card-body">
-          <Link href="">
+          <Link href="/coursepage">
             <p className="card-title text-base">{title}</p>
           </Link>
           <p className="text-sm">Created by {author}</p>
