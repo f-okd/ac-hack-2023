@@ -15,7 +15,7 @@ export default async function handler(
   if (req.method == "GET") {
     const file = await promises.readFile(process.cwd() + "/public/database.json", "utf8");
     const db: Database = JSON.parse(file);
-    const { email, password } = req.body;
+    const { email, password } = JSON.parse(req.body);
     const user = db.users.find(
         user => user.email == email && user.password == password);
 

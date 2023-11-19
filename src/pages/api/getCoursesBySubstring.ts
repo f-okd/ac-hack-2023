@@ -14,9 +14,9 @@ export default async function handler(
 ) {
   const file = await promises.readFile(process.cwd() + "/public/database.json", "utf8");
   const db: Database = JSON.parse(file);
-  const { substring } = req.body;
-  const courses = db.courses.filter(course => course.title.toLowerCase().includes(substring));
-  console.log(substring);
+  const { query } = JSON.parse(req.body);
+  const courses = db.courses.filter(course => course.title.toLowerCase().includes(query));
+  console.log(req.body);
   console.log(courses);
   console.log(db.courses);
 

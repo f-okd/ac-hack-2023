@@ -15,7 +15,7 @@ export default async function handler(
   if (req.method == "GET") {
     const file = await promises.readFile(process.cwd() + "/public/database.json", "utf8");
     const db: Database = JSON.parse(file);
-    const { id } = req.body;
+    const { id } = JSON.parse(req.body);
     const comment = db.comments.find(comment => comment.id == id);
 
     if (!comment) {

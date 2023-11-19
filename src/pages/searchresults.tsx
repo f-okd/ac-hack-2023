@@ -9,7 +9,7 @@ export default function SearchResults({ query="I" }:{ query: string }) {
     useEffect(() => {
         fetch("./api/getCoursesBySubstring/", {
             body: JSON.stringify({
-                substring: query.toLowerCase()
+                query: query.toLowerCase()
             }),
             method: 'POST',
         })
